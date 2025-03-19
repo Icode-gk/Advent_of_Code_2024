@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="Day1.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Day1_Puzzle1_data.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
