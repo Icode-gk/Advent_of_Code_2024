@@ -3,24 +3,6 @@
 #include <iostream>
 #include <algorithm>
 
-void sort(std::vector<int>& vec, const int &size) {
-	for (int i = 0; i < size; i++) {
-		bool swapped = 1;
-		for (int j = 0; j < size - (i + 1); j++) {
-			if (vec[j] > vec[j + 1]) {
-				int swap = vec[j];
-				vec[j] = vec[j + 1];
-				vec[j + 1] = swap;
-				swapped = 1;
-			}
-		}
-
-		if (!swapped) return;
-	}
-
-	return;
-}
-
 int getDistance(int &num1, int &num2) {
 	int result = num2 - num1;
 
@@ -61,8 +43,8 @@ int main() {
 	if (!getData(listA, listB, "Day1_Puzzle1_data.txt")) std::cerr << "Could not fetch data";
 
 	if (listA.size() == listB.size()) {
-		sort(listA, listA.size());
-		sort(listB, listB.size());
+		std::sort(listA.begin(), listA.end());
+		std::sort(listB.begin(), listB.end());
 
 		for (int i = 0; i < listA.size(); i++) {
 			distance += getDistance(listA[i], listB[i]);
