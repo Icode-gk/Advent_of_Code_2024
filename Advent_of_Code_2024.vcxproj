@@ -128,9 +128,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Day1.cpp" />
+    <ClCompile Include="Header.hpp" />
+    <ClCompile Include="Day2.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Day1_Puzzle1_data.txt" />
+    <Text Include="Day2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Day1.hpp" />
+    <ClInclude Include="Day2.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

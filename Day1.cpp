@@ -1,9 +1,8 @@
-#include <vector>
-#include <fstream>
-#include <iostream>
-#include <algorithm>
 
-int getDistance(int &num1, int &num2) {
+#include "Day1.hpp"
+
+
+int getDistance(int& num1, int& num2) {
 	int result = num2 - num1;
 
 	if (result <= 0) result *= -1;
@@ -11,7 +10,7 @@ int getDistance(int &num1, int &num2) {
 	return result;
 }
 
-bool getData(std::vector<int>& listA, std::vector<int>& listB, const std::string txtFile) {
+bool getData(std::vector<int>& listA, std::vector<int>& listB, const std::string &txtFile) {
 	std::ifstream ifs;
 	int numberTemp, index = 0;
 	ifs.open(txtFile);
@@ -33,28 +32,4 @@ bool getData(std::vector<int>& listA, std::vector<int>& listB, const std::string
 	}
 
 	return 1;
-}
-
-
-int main() {
-	std::vector<int> listA = {}, listB = {};
-	long int distance = 0, similarity = 0;
-
-	if (!getData(listA, listB, "Day1_Puzzle1_data.txt")) std::cerr << "Could not fetch data";
-
-	if (listA.size() == listB.size()) {
-		std::sort(listA.begin(), listA.end());
-		std::sort(listB.begin(), listB.end());
-
-		for (int i = 0; i < listA.size(); i++) {
-			distance += getDistance(listA[i], listB[i]);
-			similarity += listA[i] * std::count(listB.begin(), listB.end(), listA[i]);
-			//std::cout << listA[i] << ' ' << listB[i] << '\n';
-		}
-	}
-
-	std::cout << "\nTotal Distance is : " << distance << "\nSimilarity Score is: " << similarity << '\n';
-
-
-	return 0;
 }
