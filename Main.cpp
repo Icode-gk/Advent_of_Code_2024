@@ -50,17 +50,21 @@ void day2(std::string &file) {
 
 	getVals(file, listMatrix);
 
-	bool safe;
 	for (int i = 0; i < listMatrix.size(); i++) {
-		safe = checkSafe((i + 1), listMatrix[i]);
-		if (safe) {
+		//if (i == 7) {
+		//	std::cout << "breakpoint\n"; // Debug point
+		//}
+
+		if (checkSafe((i + 1), listMatrix[i])) {
+			std::cout << ": safe\n";
+			numSafe++;
+		}
+		else if (checkCanBeSafe(listMatrix[i])) {
 			std::cout << ": safe\n";
 			numSafe++;
 		}
 		else std::cout << ": unsafe\n";
-		if (i == 73) {
-			std::cout << "breakpoint\n";
-		}
+
 	}
 
 	std::cout << "Total Safe: " << numSafe << std::endl;
